@@ -7,13 +7,12 @@
 #include "lwip/dns.h"
 #include "lwip/netdb.h"
 #include "lwip/igmp.h"
-#include "esp_request.h"
 #include "cJSON.h"
 
-#define REQ_TAG "MYCOMP"
+#define TAG "MYCOMP"
 
 int mycomp_function()
 {
-    ESP_LOGD(TAG, "Response: %s", response);
+    ESP_LOGD(TAG, "Running mycomp_function");
     return 42;
 }
