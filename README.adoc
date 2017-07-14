@@ -1,0 +1,19 @@
+= Component Template: YourComp
+
+== Locations
+
+Your components´ code should be in the following folder: $IDF_PATH/components/<YourComp>
+You compile from $IDF_PATH/tools/unit-test-app
+
+== Usage
+
+
+    make menuconfig
+
+    make TEST_COMPONENTS='<YourComp>'
+or 
+    make TESTS_ALL=1   
+    
+if you want to build all the components
+
+
