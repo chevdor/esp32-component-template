@@ -2,18 +2,25 @@
 
 == Locations
 
-Your components´ code should be in the following folder: $IDF_PATH/components/<YourComp>
+Your components´ code should be in a components folder.
+Set the following variable:
+
+export EXTRA_COMPONENT_DIRS=/.../esp-idf-extra-components/
+
 You compile from $IDF_PATH/tools/unit-test-app
 
 == Usage
 
+    export EXTRA_COMPONENT_DIRS="$IDF_PATH/tools/unit-test-app/components /Users/will/projects/esp32/esp-idf-extra-components/esp32-component-template/custom-components/components"
 
     make menuconfig
 
     make TEST_COMPONENTS='<YourComp>'
-or 
-    make TESTS_ALL=1   
-    
-if you want to build all the components
+or
+    make TESTS_ALL=1
 
+if you want to build all the components. Then flash.
 
+Thanks to mh-dev for his very helpful repo: https://github.com/mh-dev/esp32_reusable_components
+
+    make clean && rm -rf && make TEST_COMPONENTS='template_c template_cpp' && make flash && make monitor
